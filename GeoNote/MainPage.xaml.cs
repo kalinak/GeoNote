@@ -34,11 +34,7 @@ namespace GeoNote
         private ObservableCollection<Note> allNotes;
         private MapItemsControl mapItemsControl;
 
-      //  private GeoCoordinate currentLocation;
-
         private bool isAddingCustomLocation;
-
-       // private ObservableCollection<Note> allNotes;
         private int maxDisplayedNoteId;
             
         // Constructor
