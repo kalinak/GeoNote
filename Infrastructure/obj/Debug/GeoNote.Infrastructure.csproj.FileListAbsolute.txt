@@ -1,0 +1,4 @@
+C:\Users\ivanh\Downloads\GeoNote\GeoNote\GeoNote\Infrastructure\Bin\Debug\Infrastructure.dll
+C:\Users\ivanh\Downloads\GeoNote\GeoNote\GeoNote\Infrastructure\Bin\Debug\Infrastructure.pdb
+C:\Users\ivanh\Downloads\GeoNote\GeoNote\GeoNote\Infrastructure\obj\Debug\Infrastructure.dll
+C:\Users\ivanh\Downloads\GeoNote\GeoNote\GeoNote\Infrastructure\obj\Debug\Infrastructure.pdb

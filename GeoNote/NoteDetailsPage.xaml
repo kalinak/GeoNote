@@ -1,0 +1,55 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="GeoNote.NoteDetailsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar x:Name="appBar" IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/delete.png" Text="delete" x:Name="deleteBtn" Click="deleteBtn_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/edit.png" Text="edit" x:Name="editBtn" Click="editBtn_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/save.png" Text="save"  x:Name="saveBtn" Click="saveBtn_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/questionmark.png" Text="directions" Click="mSetDestination_Click" x:Name="setDestButton" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid HorizontalAlignment="Left" Height="758" Margin="0" VerticalAlignment="Top" Width="446">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="txtDate" Grid.Row="0" HorizontalAlignment="Left" Margin="0,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" Foreground="#FF329FD6" FontSize="29.333" FontFamily="Segoe UI Semibold"/>
+
+                <TextBlock x:Name="txtText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Text}" VerticalAlignment="Top" Width="446" Grid.Row="1" Margin="0,10" FontSize="26.667"/>
+                <TextBox x:Name="txtTextEdit" HorizontalAlignment="Center" Margin="0,10" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Visibility="Collapsed" Width="455" BorderBrush="#FF329FD6" Background="White" SelectionBackground="#FF329FD6"/>
+                <Image Grid.Row="2" HorizontalAlignment="Left" Margin="0,10" VerticalAlignment="Top" Width="446" Source="{Binding NoteImageBig}" MaxHeight="450"/>
+                <Button x:Name="btnPlay" Grid.Row="3" HorizontalAlignment="Center" Margin="10,0,10,-573" VerticalAlignment="Top" Width="100" Height="100" Visibility="{Binding HasRecording}" Click="btnPlay_Click">
+                    <Button.Background>
+                        <ImageBrush Stretch="Fill" ImageSource="Assets/transport.play.png"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

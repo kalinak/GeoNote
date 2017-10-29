@@ -1,0 +1,65 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="GeoNote.AddNotePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28"/>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Margin="12,0" Grid.RowSpan="2">
+            <Grid.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="styled-map-after.png"/>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="154"/>
+                <RowDefinition Height="86"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" x:Name="statusTextBlock" HorizontalAlignment="Left" Height="63" Margin="10,-4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="433" FontSize="40" Foreground="#FF329FD6" FontFamily="Segoe UI Semibold" Text="Create new note" FontWeight="Bold" Grid.RowSpan="2"/>
+            <TextBox Grid.Row="1" x:Name="noteBox" HorizontalAlignment="Left" Margin="0,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="White" Width="456" Height="144" BorderBrush="#FF2CA6E3" MinHeight="144" BorderThickness="4"/>
+            <Button  Grid.Row="2" x:Name="saveNoteBtn" Content="Save Note" HorizontalAlignment="Left" Height="76" Margin="0,5" VerticalAlignment="Top" Width="456" Click="saveNote_Btn_Click" FontFamily="Meiryo" BorderBrush="Black" Foreground="White" Background="#FF2CA6E3" FontWeight="Bold"/>
+            <Image Grid.Row="0" x:Name="imageBox" HorizontalAlignment="Center" Margin="10,50,10,0" VerticalAlignment="Top" MaxHeight="300" MaxWidth="400"/>
+            <Button x:Name="toggleRecordingButton" Content="" HorizontalAlignment="Left" Margin="119,5,0,0" VerticalAlignment="Top" Click="toggleRecordingButton_Click" Grid.Row="3" Height="100" Width="100" Visibility="Collapsed">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="Assets/microphone.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="playButton" Content="" HorizontalAlignment="Left" Margin="238,5,0,0" VerticalAlignment="Top" Click="playButton_Click" Height="100" Grid.Row="3" Width="100" Visibility="Collapsed">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="Assets/transport.play.png"/>
+                </Button.Background>
+            </Button>
+            <Image x:Name="imgRecording" HorizontalAlignment="Left" Margin="13,5,0,0" VerticalAlignment="Top" Source="/Assets/start_record.png" Visibility="Collapsed" MaxHeight="300" Width="40" Height="40" Grid.Row="3"/>
+        </Grid>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="add image" x:Name="addImage" Click="addImage_Click"/>
+                <shell:ApplicationBarMenuItem Text="add audio" x:Name="addAudio" Click="addAudio_Click" />
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+</phone:PhoneApplicationPage>
